@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Turismo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css"> <!-- Enlace a un archivo CSS externo -->
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <h1 class="welcome-title">City Tours</h1>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Regresar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenedor de la imagen y overlay oscuro -->
+    <div class="image-container">
+        <img src="recursos/machupicchu.jpg" class="card-img-top" alt="Imagen de Paracas">
+        <div class="overlay"></div>
+
+        <!-- Texto en la parte superior derecha sobre la imagen -->
+        <div class="text-container">
+            <h2 class="paracas-title">Cusco</h2>
+            <p class="description">Disfruta 5D/4N de la mejor experiencia, en una de las maravillas del mundo.</p>
+            <button class="b_cusco">Precios increibles desde $300 o S/. 958</button>
+        </div>
+        <!-- Título y descripción debajo de la imagen -->
+    <section class="explora-section_cusco">
+        <h2 class="explora-title_cusco">Visita la Maravilla del Mundo</h2>
+        <p class="explora-description_cusco">Todo lo hicimos por ti ¡Solo disfruta! Incluye todo lo que necesitas.</p>
+        <h2 class="explora-title_cusco">$. 300 o S/. 958</h2>
+        <p class="explora-description_cusco">5 días y 4 noches inolvidables en Paracas esperan por ti. ¡Todo Incluido! ¡Paracas nos espera!</p>
+        <!-- Formulario de registro -->
+        <div class="form-container">
+            <h3>Formulario de Registro</h3>
+            <form action="submit_form.php" method="post">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="documento">Tipo de Documento</label>
+                    <select class="form-control" id="documento" name="documento">
+                        <option value="DNI">DNI</option>
+                        <option value="Pasaporte">Pasaporte</option>
+                        <option value="Carnet de extranjeria">Carnet de extranjeria</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn_cusco btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </section>
+<body>
+</html>

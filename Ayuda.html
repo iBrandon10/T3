@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Tours - Centro de Ayuda</title>
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #243442;
+            color: #fff;
+            padding: 15px;
+            text-align: center; /* Cambiado a "center" para alinear el contenido al centro */
+            font-size: 30px;
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Alinea los elementos al centro */
+        }
+
+        .navbar ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+            justify-content: center; /* Cambiado para centrar los elementos en el menú */
+        }
+
+        .navbar ul li {
+            position: relative; /* Necesario para el posicionamiento del submenú */
+        }
+
+        .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #000000;
+            font-weight: 600;
+            display: block;
+            text-decoration: none;
+        }
+
+        .navbar ul li a:hover {
+            color: #0f0f0f; /* Cambié el color al pasar el ratón sobre los enlaces */
+        }
+
+        /* Menú desplegable */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ffffff;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            left: 0; /* Asegura que el menú se alinee al lado izquierdo del elemento padre */
+            border-radius: 5px; /* Estilo opcional para redondear las esquinas */
+        }
+
+        /* Mostrar el submenú cuando el usuario pasa el ratón sobre el elemento de la lista */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Estilo de los elementos dentro del submenú */
+        .dropdown-content li {
+            padding: 10px;
+            text-align: left;
+        }
+
+        /* Cambiar color del texto a negro */
+        .dropdown-content li a {
+            color: #fafafa; /* Letras negras */
+            text-decoration: none;
+            display: block;
+        }
+
+        /* Estilo al pasar el ratón sobre los enlaces del submenú */
+        .dropdown-content li a:hover {
+            background-color: #a1a1a1; /* Color de fondo al pasar el ratón */
+            color: #fff; /* Letras blancas cuando se pasa el ratón */
+        }
+
+        /* Contenedor de ayuda */
+        .help-center {
+            text-align: center;
+            padding: 20px;
+        }
+        .help-center h2 {
+            color: #333;
+            padding: 20px;
+        }
+
+        /* Buscador */
+        .search-bar {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        /* Botones de opciones */
+        .buttons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .buttons button {
+            background-color: #2a6ca7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .buttons button:hover {
+            background-color: #ff7f00;
+        }
+
+        /* Sección de ayuda */
+        .help-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 20px;
+        }
+        .help-option {
+            background-color: white;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        .help-option img {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 10px;
+        }
+        .help-option p {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1 class="welcome-title">Bienvenidos a City Tours</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <!-- Menú desplegable de Sobre Nosotros -->
+                <li><a href="Preguntas.html">Ayuda</a></li>
+                <li><a href="Reservas.html">Reservas</a></li>
+                <li class="dropdown">
+                    <a href="#Dashboard">Dashboards</a>
+                    <ul class="dropdown-content">
+                        <li><a href="DashNegocio.html">Dashboard del Negocio</a></li>
+                        <li><a href="DashSistema.html">Dashboard del Sistema</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#Landin page">Landin page</a>
+                    <ul class="dropdown-content">
+                        <li><a href="Landinpage.html">Paracas</a></li>
+                        <li><a href="landinpage2.html">Cusco</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Centro de ayuda -->
+    <div class="help-center">
+        <h2>Centro de Ayuda City Tours</h2>
+        <p>¿En qué podemos ayudarte?</p>
+
+        <!-- Barra de búsqueda -->
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar">
+        </div>
+
+        <!-- Botones de opciones -->
+        <div class="buttons">
+            <button>Canales de Atención</button>
+            <button>Seguimiento de tu reserva</button>
+        </div>
+
+        <!-- Opciones de ayuda -->
+        <div class="help-options">
+            <div class="help-option">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/640px-WhatsApp.svg.png" alt="WhatsApp">
+                <p>Escríbenos por WhatsApp</p>
+                <p>Podrás conocer y resolver el estado de tu reserva sin necesidad de acercarte a nuestra oficina.</p>
+            </div>
+            <div class="help-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4tcXpjQ8iOWfgt-AQCNSzmi4FkoVMBwok8g&s" alt="Canales de Atención">
+                <p>Conoce nuestros canales de atención</p>
+                <p>City Tour te ayuda con gusto.</p>
+            </div>
+            <div class="help-option">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsiPUAKK46rrdXNlYcdafdYRCjpkDDf1zmbA&s" alt="Oferta">
+                <p>Ofertas únicas por Halloween</p>
+                <p>Ahora contamos con el 5% de descuento en todos los Tours de Lima y Callao. Para provincia, tenemos el 3% de descuento con su tarjeta.</p>
+            </div>
+            <div class="help-option">
+                <img src="https://w7.pngwing.com/pngs/740/868/png-transparent-speech-bubble-nigeria-question-weight-loss-information-at-t-questions-miscellaneous-blue-text-thumbnail.png" alt="Preguntas Frecuentes">
+                <p>Preguntas Frecuentes</p>
+                <p>Explora los temas de ayuda más consultados por nuestros turistas.</p>
+            </div>
+            <div class="help-option">
+                <img src="https://cdn-icons-png.flaticon.com/512/7380/7380736.png" alt="Términos y Condiciones">
+                <p>Términos y Condiciones</p>
+                <p>Consulta los aspectos clave sobre nuestra política de reserva, cancelaciones y el uso de nuestros servicios en City Tours.</p>
+            </div>
+            <div class="help-option">
+                <img src="https://www.saludayacucho.gob.pe/wp-content/uploads/imagenes/libro_reclamaciones.png" alt="Libro de Reclamaciones">
+                <p>Libro de Reclamaciones</p>
+                <p>Si tienes alguna queja o sugerencia, nuestro Libro de Reclamaciones está disponible para ti.</p>
+            </div>
+        </div>
+    </div>
+
+</body>

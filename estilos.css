@@ -1,0 +1,469 @@
+/* styles.css */
+
+/* Reiniciar márgenes y paddings por defecto */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container,
+.container-fluid {
+  padding: 0;
+}
+
+.row {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  
+  .col- {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+/* Estilo del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Color de fondo */
+}
+
+/* Estilo del encabezado */
+header {
+    background: #243442; /* Color de fondo del encabezado */
+    color: #ffffff; /* Color del texto */
+    padding: 5px; /* Espaciado interno */
+    text-align: center; /* Centrar texto */
+}
+
+/* Estilo del menú de navegación */
+nav ul {
+    list-style: none; /* Sin puntos en la lista */
+    display: flex;
+    justify-content: center; /* Centrar el menú */
+}
+
+nav ul li {
+    position: relative; /* Para el posicionamiento del menú desplegable */
+    display: inline-block; /* Para alineación en línea */
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+nav ul li a {
+    color: #ffffff; /* Color del texto del enlace */
+    text-decoration: none; /* Sin subrayado */
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    color: #000000; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilo de las secciones principales */
+main {
+    padding: 0px; /* Espaciado interno */   
+    
+}
+
+/* Estilo de las secciones */
+section {
+    background: #ffffff; /* Color de fondo de las secciones */
+    margin: 15px 0; /* Margen entre secciones */
+    padding: 15px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo de los artículos */
+article {
+    margin-bottom: 15px; /* Margen entre artículos */
+}
+
+/* Estilo del formulario */
+form {
+    display: flex; /* Flexbox para el formulario */
+    flex-direction: column; /* Colocar elementos en columna */
+}
+
+form label {
+    margin: 10px 0 5px; /* Margen en etiquetas */
+}
+
+form input[type="text"],
+form input[type="email"] {
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+form input[type="submit"] {
+    background: #35424a; /* Color de fondo del botón */
+    color: #ffffff; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    padding: 10px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambiar cursor a puntero */
+}
+
+form input[type="submit"]:hover {
+    background: #45a049; /* Color de fondo al pasar el ratón */
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center; /* Centrar texto */
+    padding: 20px 0; /* Espaciado interno */
+    background: #35424a; /* Color de fondo del pie */
+    color: #ffffff; /* Color del texto */
+    position: relative; /* Posición relativa */
+    bottom: 0; /* Alinear al fondo */
+    width: 100%; /* Ancho completo */
+}
+
+
+.destinos-container {
+    display: flex; /* Usar flexbox para alinear elementos en línea */
+    justify-content: space-between; /* Espaciado entre los artículos */
+    flex-wrap: wrap; /* Permitir que los artículos se envuelvan si no hay suficiente espacio */
+}
+
+/* Estilo para los artículos */
+.cards {
+    flex: 1; /* Cada artículo ocupará espacio equitativo */
+    margin: 10px; /* Margen alrededor de cada artículo */
+    min-width: 250px; /* Ancho mínimo para cada artículo */
+    border: 3px;
+    border-color: #35424a;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Estilo para las imágenes de los destinos */
+.destino-imagen {
+    width: 100%; /* Ajusta el ancho al contenedor */
+    height: 75%;
+    border-radius: 5px; /* Bordes redondeados */
+    margin-top: 10px; /* Margen superior */
+    border: 3px;
+    border-color: #35424a;
+    align-content: center;
+}
+
+/* Estilos para el menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Coloca el menú justo debajo de "Sobre Nosotros" */
+    left: 0;
+    background-color: #ffffff; /* Fondo blanco */
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra */
+    z-index: 1; /* Elevar el menú sobre otros elementos */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+.dropdown-content li {
+    width: 100%; /* Asegura que los elementos ocupen el ancho del menú desplegable */
+}
+
+.dropdown-content li a {
+    color: #333; /* Color del texto */
+    padding: 10px; /* Espaciado interno */
+    display: block; /* Hacer que el enlace ocupe el espacio completo */
+    text-align: left; /* Alinear el texto a la izquierda */
+}
+
+.dropdown-content li a:hover {
+    background-color: #ddd; /* Fondo al pasar el ratón */
+}
+
+/* Mostrar el menú desplegable al pasar el ratón */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel-inner {
+    padding: 0px 0; /* Espacio extra entre las diapositivas */
+}
+
+.carousel-item {
+    padding: 20px; /* Espacio entre las tarjetas */   
+}
+
+/* Estilo de las flechas */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black; /* Cambiar color de las flechas */
+    width: 50px; /* Aumenta el tamaño de las flechas */
+    height: 50px; /* Aumenta la altura de las flechas */
+    border-radius: 50%; /* Hace las flechas circulares */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    position: absolute; /* Asegura que las flechas estén posicionadas sobre el carrusel */
+    top: 50%; /* Centrado vertical */
+    transform: translateY(-50%); /* Ajusta la posición de las flechas a mitad de la altura */
+    z-index: 1; /* Asegura que las flechas estén sobre el contenido */
+}
+
+.carousel-control-prev {
+    left: 10px; /* Coloca la flecha previa a la izquierda */
+}
+
+.carousel-control-next {
+    right: 10px; /* Coloca la flecha siguiente a la derecha */
+}
+.welcome-title {
+    font-family: 'MV Boli', cursive, 'Arial', sans-serif;
+    font-size: 50px; /* Tamaño de letra más grande */
+}
+
+/* Contenedor de la imagen */
+.image-container {
+    position: relative; /* Para que el formulario esté sobre la imagen */
+    width: 100%;
+    height: 800px; /* Ajusta la altura según sea necesario */
+}
+
+/* Imagen de fondo */
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra todo el contenedor sin distorsión */
+}
+
+/* Overlay oscuro sobre la imagen */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(37, 28, 18, 0.4); /* Fondo oscuro con opacidad */
+    z-index: 5;
+}
+
+/* Contenedor de texto centrado sobre la imagen */
+.text-container {
+    position: absolute;
+    top: 50%; /* Centrado vertical */
+    left: 50%; /* Centrado horizontal */
+    transform: translate(-50%, -50%); /* Ajuste para centrar exacto */
+    text-align: center; /* Asegura que el texto esté centrado dentro del contenedor */
+    z-index: 10; /* Asegurarse de que esté encima de la imagen y del overlay */
+    color: white; /* Texto blanco para resaltar */
+}
+
+/* Título "Paracas" grande */
+.paracas-title {
+    font-family: 'Segoe Script', cursive; /* Si quieres usar una fuente decorativa como 'Segoe Script' */
+    font-size: 8rem; /* Ajusta el tamaño según sea necesario */
+    margin: 0;
+}
+
+/* Descripción debajo del título */
+.description {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.b_comprar {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #074b79;  /* Fondo del botón */
+    color: white;               /* Color del texto (blanco) */
+    border: 2px solid #074b79;  /* Borde del botón con el mismo color que el fondo */
+    padding: 10px 20px;         /* Espaciado interno (ajústalo según lo necesites) */
+    border-radius: 5px;         /* Bordes redondeados */
+    text-align: center;         /* Alineación centrada para el texto */
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves para los cambios de estado */
+}
+
+/* Estilos para la sección "Explora. Vive. Comparte" */
+.explora-section {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+}
+
+.explora-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #074b79;
+    margin-bottom: 20px;
+}
+
+.explora-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Estilos para el formulario */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #b6b4b42f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-container .form-group {
+    margin-bottom: 15px;
+}
+
+.form-container .btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #0e334d;
+}
+.b_cusco {
+    font-size: 1rem;
+    margin-top: 10px;
+    font-weight: bold;
+    background-color: #1b7737;  /* Fondo del botón */
+    color: white;               /* Color del texto (blanco) */
+    border: 2px solid #1b7737;  /* Borde del botón con el mismo color que el fondo */
+    padding: 10px 20px;         /* Espaciado interno (ajústalo según lo necesites) */
+    border-radius: 5px;         /* Bordes redondeados */
+    text-align: center;         /* Alineación centrada para el texto */
+    transition: background-color 0.3s, border-color 0.3s; /* Transiciones suaves para los cambios de estado */
+}
+.explora-section_cusco {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+}
+
+.explora-title_cusco {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1b7737;
+    margin-bottom: 20px;
+}
+
+.explora-description_cusco {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+.btn_cusco {
+    width: 50%;
+    padding: 10px;
+    align-self: center;
+    margin-top: 40px;
+    background-color: #1a6913;
+    border: none;
+    border-radius: 5px;
+}
+/* Estilo para el formulario */
+#reserva-form {
+    background-color: white; /* Fondo blanco para el formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para los campos del formulario */
+#reserva-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+#reserva-form input, #reserva-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Estilo para el botón de envío */
+#reserva-form input[type="submit"] {
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 100%;
+}
+
+#reserva-form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+/* Clase para el contenedor principal que tiene las secciones */
+.main-container {
+    display: flex;
+    justify-content: space-between; /* Separación entre las secciones */
+    flex-wrap: wrap; /* Permite que las secciones se ajusten si no caben en una fila */
+    gap: 2rem; /* Espacio entre las secciones */
+    padding: 2rem;
+}
+
+/* Clase para la sección de reservas */
+.s_reserva {
+    width: 30%; /* El ancho de la primera sección */
+    background-color: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Clase para la sección de promociones (carousel) */
+#features-section {
+    width: 65%; /* El ancho de la segunda sección */
+}
+
+/* Estilo para el formulario de la sección de reservas */
+.s_reserva form {
+    display: flex;
+    flex-direction: column;
+}
+
+.s_reserva form label {
+    margin: 8px 0 4px;
+}
+
+.s_reserva form input,
+.s_reserva form select {
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.s_reserva form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.s_reserva form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Estilos de las tarjetas en el carrusel */
+.card {
+    border-radius: 8px;
+}
+
+
+
+
