@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="estilos.css"> <!-- Enlace a un archivo CSS externo -->
 </head>
 <body>
+    
     <!-- Encabezado -->
     <header>
         <h1 class="welcome-title">City Tours</h1>
@@ -18,47 +19,59 @@
         </nav>
     </header>
     
-    <!-- Contenedor de la imagen y overlay oscuro -->
-    <div class="image-container">
-        <img src="recursos/Paracas.jpg" class="card-img-top" alt="Imagen de Paracas">
-        <div class="overlay"></div>
+    <!-- Contenedor con la fila para dividir la imagen y el formulario -->
+    <div class="container_paracas">
+        <div class="row">
+            <!-- Columna de la imagen y descripción -->
+            <div class="col-md-6">
+                <div class="image-container">
+                    <img src="recursos/Paracas.jpg" class="card-img-top" alt="Imagen de Paracas">
+                    <div class="overlay"></div>
 
-        <!-- Texto en la parte superior derecha sobre la imagen -->
-        <div class="text-container">
-            <h2 class="paracas-title">Paracas</h2>
-            <p class="description">Disfruta 3D/2N de la mejor experiencia en la playa, con la mejor comida y bebida.</p>
-            <button class="b_comprar">Precios increibles desde $100</button>
+                    <!-- Texto en la parte superior derecha sobre la imagen -->
+                    <div class="text-container">
+                        <h2 class="paracas-title">Paracas</h2>
+                        <p class="description">Disfruta 3D/2N de la mejor experiencia en la playa.</p>
+                        <button class="b_comprar">Precios increíbles desde $100</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Columna del formulario -->
+            <div class="col-md-6">
+                <section class="explora-section">
+                    <h2 class="explora-title">Explora. Vive. Comparte</h2>
+                    <p class="explora-description">Todo lo hicimos por ti ¡Solo disfruta! Incluye todo lo que necesitas.</p>
+                    <h2 class="explora-title">$. 100</h2>
+                    <p class="explora-description">3 días y 2 noches inolvidables en Paracas esperan por ti. ¡Todo Incluido! ¡Paracas nos espera!</p>
+                    
+                    <!-- Formulario de registro -->
+                    <div class="form-container">
+                        <h3>Formulario de Registro</h3>
+                        <form action="submit_form.php" method="post">
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="documento">Tipo de Documento</label>
+                                <select class="form-control" id="documento" name="documento">
+                                    <option value="DNI">DNI</option>
+                                    <option value="Pasaporte">Pasaporte</option>
+                                    <option value="Carnet de extranjería">Carnet de extranjería</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Registrarse</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
         </div>
-        <!-- Título y descripción debajo de la imagen -->
-    <section class="explora-section">
-        <h2 class="explora-title">Explora. Vive. Comparte</h2>
-        <p class="explora-description">Todo lo hicimos por ti ¡Solo disfruta! Incluye todo lo que necesitas.</p>
-        <h2 class="explora-title">$. 100</h2>
-        <p class="explora-description">3 días y 2 noches inolvidables en Paracas esperan por ti. ¡Todo Incluido! ¡Paracas nos espera!</p>
-        <!-- Formulario de registro -->
-        <div class="form-container">
-            <h3>Formulario de Registro</h3>
-            <form action="submit_form.php" method="post">
-                <div class="form-group">
-                    <label for="nombre">Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo electrónico</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="Tu correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="documento">Tipo de Documento</label>
-                    <select class="form-control" id="documento" name="documento">
-                        <option value="DNI">DNI</option>
-                        <option value="Pasaporte">Pasaporte</option>
-                        <option value="Carnet de extranjeria">Carnet de extranjeria</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </form>
-        </div>
-    </section>
+    </div>
+
 </body>
 </html>
-
