@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas - City Tours</title>
-    <link rel="stylesheet" href="estilos.css"> <!-- Enlace a un archivo CSS externo -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Inclusión de Chart.js -->
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         nav ul {
             list-style: none;
@@ -23,27 +23,19 @@
             font-size: 18px;
         }
 
-        /* Estilos para el dashboard */
         #dashboards {
             display: flex;
-            flex-direction: column;
-            align-items: center; /* Centra todo horizontalmente */
             justify-content: center;
-            text-align: center;
+            align-items: center;
+            flex-wrap: nowrap; /* Mantiene los dashboards en una sola fila */
             margin: 20px;
+            gap: 20px; /* Espacio entre los dashboards */
         }
 
         .dashboard {
-            display: none; /* Ocultar todos los dashboards por defecto */
-            max-width: 1000px; /* Limitar el tamaño máximo */
-            margin-bottom: 20px; /* Separar entre los dashboards */
+            max-width: 500px;
             width: 100%;
-            height: 500px; /* Tamaño fijo de altura */
-        }
-
-        .dashboard.active {
-            display: flex; /* Mostrar solo el dashboard activo */
-            justify-content: space-between;
+            height: 500px;
         }
 
         .dashboard-content {
@@ -51,40 +43,11 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            text-align: left;
         }
 
-        .dashboard-description {
-            width: 40%;
-            padding: 20px;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        /* Tamaño fijo para los gráficos */
         canvas {
-            width: 600px !important;  /* Fijo a 600px de ancho */
-            height: 500px !important; /* Fijo a 500px de alto */
-        }
-
-        /* Estilos para los botones de navegación */
-        .navigation {
-            margin: 20px 0;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin: 5px;
-        }
-
-        button:hover {
-            background-color: rgb(82, 82, 82);
+            width: 80% !important;
+            height: 300px !important;
         }
 
         footer {
@@ -93,6 +56,17 @@
             padding: 10px;
             background-color: #333;
             color: white;
+        }
+
+        h2 {
+            text-align: center; /* Centra el título */
+            font-size: 2em;
+            margin-top: 10px; /* Añadido margen superior para más separación */
+            margin-bottom: 10px; /* Espacio debajo del título */
+        }
+
+        h3 {
+            text-align: center; /* Centra el título */
         }
 
     </style>
@@ -131,61 +105,38 @@
 </header>
 
 <main>
-    
+    <h2>Dashboards del Negocio</h2> <!-- Título principal encima de los dashboards -->
     <section id="dashboards">
-        <h2>Dashboards del Negocio</h2>
-
-        <div class="navigation">
-            <button id="prevBtn">Anterior</button>
-            <button id="nextBtn">Siguiente</button>
-        </div>
         
-        <div id="dashboard1" class="dashboard active">
+
+        <div id="dashboard1" class="dashboard">
+            <h3>Tasa de Conversión de Visitantes a Clientes</h3>
             <div class="dashboard-content">
                 <canvas id="conversionChart"></canvas>
-                <div class="dashboard-description">
-                    <h3>Tasa de Conversión de Visitantes a Clientes</h3>
-                    <p>Este gráfico muestra la tasa de conversión mensual de visitantes a clientes a lo largo del año, brindando una visión de cómo las campañas están generando conversiones.</p>
-                    <p>Analizar las conversiones mes a mes ayuda a identificar patrones estacionales, medir el impacto de las campañas publicitarias, y evaluar el retorno de inversión (ROI). </p>
-                </div>
             </div>
         </div>
 
         <div id="dashboard2" class="dashboard">
+            <h3>Ventas por Temporada</h3>
             <div class="dashboard-content">
                 <canvas id="ventasTemporadaChart"></canvas>
-                <div class="dashboard-description">
-                    <h3>Ventas por Temporada</h3>
-                    <p>Este gráfico muestra las ventas totales durante cada mes del año, lo que permite identificar patrones estacionales de demanda.</p>
-                    <p> Con esta información, la empresa pueden ajustar sus estrategias de inventario, marketing y promoción para aprovechar los períodos de alta demanda y prepararse para los momentos de baja actividad.</p>
-                </div>
             </div>
         </div>
 
         <div id="dashboard3" class="dashboard">
+            <h3>Rendimiento de Proveedores</h3>
             <div class="dashboard-content">
                 <canvas id="proveedoresChart"></canvas>
-                <div class="dashboard-description">
-                    <h3>Rendimiento de Proveedores</h3>
-                    <p>Aquí se muestra el rendimiento de los proveedores en base a su desempeño mensual, ayudando a evaluar su fiabilidad y eficiencia.</p>
-                    <p>Un proveedor confiable y eficiente puede ser clave para el éxito de una empresa, ya que asegura que los materiales, servicios o productos se entreguen a tiempo y con los estándares esperados</p>
-                </div>
             </div>
         </div>
 
         <div id="dashboard4" class="dashboard">
+            <h3>Seguimiento de Redes Sociales</h3>
             <div class="dashboard-content">
                 <canvas id="redesSocialesChart"></canvas>
-                <div class="dashboard-description">
-                    <h3>Seguimiento de Redes Sociales</h3>
-                    <p>Este gráfico muestra las métricas de interacción en redes sociales, como "Me gusta" y "Compartidos", para cada plataforma, ayudando a medir el alcance y la efectividad de las campañas.</p>
-                    <p>Con estas métricas, las empresas pueden ajustar sus estrategias para maximizar el alcance, mejorar el engagement y, en última instancia, convertir la interacción en ventas o fidelización de clientes. </p>
-                </div>
             </div>
         </div>
-
     </section>
-
 </main>
 
 <footer>
@@ -193,38 +144,6 @@
 </footer>
 
 <script>
-    // Inicialización de variables
-    let currentDashboard = 0;
-    const dashboards = document.querySelectorAll('.dashboard');
-
-    // Descripciones
-    const descriptions = [
-        "Este gráfico muestra la tasa de conversión mensual de visitantes a clientes a lo largo del año, brindando una visión de cómo las campañas están generando conversiones.",
-        "Este gráfico muestra las ventas totales durante cada mes del año, lo que permite identificar patrones estacionales de demanda.",
-        "Aquí se muestra el rendimiento de los proveedores en base a su desempeño mensual, ayudando a evaluar su fiabilidad y eficiencia.",
-        "Este gráfico muestra las métricas de interacción en redes sociales, como 'Me gusta' y 'Compartidos', para cada plataforma, ayudando a medir el alcance y la efectividad de las campañas."
-    ];
-
-    // Función para mostrar el dashboard actual
-    function showDashboard(index) {
-        dashboards.forEach((dashboard, i) => {
-            dashboard.classList.toggle('active', i === index);
-        });
-        document.querySelector('.dashboard-description p').textContent = descriptions[index];
-    }
-
-    // Manejo de los botones de navegación
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        currentDashboard = (currentDashboard > 0) ? currentDashboard - 1 : dashboards.length - 1;
-        showDashboard(currentDashboard);
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        currentDashboard = (currentDashboard < dashboards.length - 1) ? currentDashboard + 1 : 0;
-        showDashboard(currentDashboard);
-    });
-
-    // Tasa de Conversión de Visitantes a Clientes
     const ctx1 = document.getElementById('conversionChart').getContext('2d');
     const conversionChart = new Chart(ctx1, {
         type: 'line',
@@ -247,7 +166,6 @@
         }
     });
 
-    // Ventas por Temporada
     const ctx2 = document.getElementById('ventasTemporadaChart').getContext('2d');
     const ventasTemporadaChart = new Chart(ctx2, {
         type: 'line',
@@ -271,7 +189,6 @@
         }
     });
 
-    // Rendimiento de Proveedores
     const ctx3 = document.getElementById('proveedoresChart').getContext('2d');
     const proveedoresChart = new Chart(ctx3, {
         type: 'bar',
@@ -295,7 +212,6 @@
         }
     });
 
-    // Seguimiento de Redes Sociales
     const ctx4 = document.getElementById('redesSocialesChart').getContext('2d');
     const redesSocialesChart = new Chart(ctx4, {
         type: 'bar',
