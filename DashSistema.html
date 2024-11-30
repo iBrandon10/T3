@@ -24,78 +24,37 @@
             font-size: 18px;
         }
 
-        /* Estilos para el dashboard */
+        /* Contenedor de los dashboards */
         #dashboards {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centra todo horizontalmente */
-            justify-content: center;
-            text-align: center;
-            margin: 20px;
+            display: flex;                     /* Flexbox para alinear los dashboards horizontalmente */
+            justify-content: space-between;    /* Espacio entre los dashboards */
+            gap: 20px;                         /* Espacio entre los dashboards */
+            flex-wrap: wrap;                   /* Permite que los dashboards pasen a la siguiente línea si es necesario */
+            padding: 20px;
+            box-sizing: border-box;            /* Incluye padding y border en el ancho total */
         }
 
+        /* Estilos individuales para cada dashboard */
         .dashboard {
-            display: none; /* Ocultar todos los dashboards por defecto */
-            max-width: 1000px; /* Limitar el tamaño máximo */
-            margin-bottom: 20px; /* Separar entre los dashboards */
-            width: 100%;
-            height: 500px; /* Tamaño fijo de altura */
-        }
-
-        .dashboard.active {
-            display: flex; /* Mostrar solo el dashboard activo */
-            justify-content: space-between;
+            flex: 1 1 calc(25% - 20px);        /* Cada dashboard ocupará 25% del contenedor, menos el espacio entre ellos */
+            min-width: 250px;                  /* Evita que los dashboards sean demasiado pequeños */
+            max-width: 500px;                  /* Evita que los dashboards sean demasiado grandes */
+            height: 500px;                     /* Altura fija para los dashboards */
+            background-color: rgb(255, 255, 255);       /* Solo para visibilidad */
+            padding: 20px;
+            box-sizing: border-box;            /* Incluye el padding en el tamaño total */
         }
 
         .dashboard-content {
             display: flex;
-            flex-direction: column;  /* Colocar los elementos de forma vertical */
             justify-content: center;
-            align-items: center;  /* Centrar los elementos horizontalmente */
+            align-items: center;
             width: 100%;
-            text-align: center;  /* Centrar el texto */
         }
 
-        .dashboard-description {
-            width: 80%;  /* Aumenta el ancho de la descripción */
-            padding: 20px;
-            font-size: 1.2em;
-            color: #333;
-            margin-top: 20px; /* Separar la descripción del gráfico */
-        }
-
-        /* Estilo para los títulos */
-        .titulo {
-            margin-bottom: 10px; /* Agregar espacio debajo del título */
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-
-
-        /* Tamaño fijo para los gráficos */
         canvas {
-            width: 600px !important;  /* Fijo a 600px de ancho */
-            height: 500px !important; /* Fijo a 500px de alto */
-        }
-
-        /* Estilos para los botones de navegación */
-        .navigation {
-            margin: 20px 0;
-        }
-
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            cursor: pointer;
-            background-color: black;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin: 5px;
-        }
-
-        button:hover {
-            background-color: rgb(82, 82, 82);
+            width: 100% !important;             /* Asegura que el canvas ocupe todo el espacio disponible */
+            height: 300px !important;           /* Altura constante para los gráficos */
         }
 
         footer {
@@ -104,6 +63,17 @@
             padding: 10px;
             background-color: #333;
             color: white;
+        }
+
+        h2 {
+            text-align: center; /* Centra el título */
+            font-size: 2em;
+            margin-top: 10px; /* Añadido margen superior para más separación */
+            margin-bottom: 10px; /* Espacio debajo del título */
+        }
+
+        h3 {
+            text-align: center; /* Centra el título */
         }
     </style>
 </head>
@@ -141,55 +111,38 @@
 </header>
 
 <main>
+    <h2>Dashboards del Sistema</h2>
     <section id="dashboards">
-        <h2>Dashboards del Sistema</h2>
 
-        <div class="navigation">
-            <button id="prevBtn">Anterior</button>
-            <button id="nextBtn">Siguiente</button>
-        </div>
-
-        <div id="dashboard1" class="dashboard active">
+        <!-- Dashboard 1 -->
+        <div id="dashboard1" class="dashboard">
+            <h3 class="titulo">Tiempo de Respuesta de Carga</h3>
             <div class="dashboard-content">
-                <h3 class="titulo">Tiempo de Respuesta de Carga</h3>
                 <canvas id="cargaChart"></canvas>
             </div>
-            <div class="dashboard-description">
-                <p>Este gráfico visualiza la variabilidad en el tiempo de carga de la páginas web durante el año. Permite evaluar el rendimiento del servidor y detectar períodos de ralentización o posibles problemas de capacidad.</p>
-                <p>La optimización del tiempo de carga es clave para garantizar una experiencia de usuario fluida y satisfactoria. Un tiempo de carga elevado puede provocar altas tasas de abandono de usuarios y afectar negativamente al posicionamiento en motores de búsqueda.</p>
-            </div>
         </div>
 
+        <!-- Dashboard 2 -->
         <div id="dashboard2" class="dashboard">
+            <h3 class="titulo">Interacción de Clics</h3>
             <div class="dashboard-content">
-                <h3 class="titulo">Interacción de Clics</h3>
                 <canvas id="clicsChart"></canvas>
             </div>
-            <div class="dashboard-description">
-                <p>Gráfico de interacciones con los elementos de la página, como clics, que permite identificar qué áreas del sitio son más populares.</p>
-                <p>Comprender cómo los usuarios interactúan con diferentes elementos de un sitio web es esencial para mejorar la usabilidad y la experiencia del usuario. Al identificar las áreas más clickeadas, los desarrolladores y diseñadores pueden optimizar el contenido y las funcionalidades del sitio</p>
-            </div>
         </div>
 
+        <!-- Dashboard 3 -->
         <div id="dashboard3" class="dashboard">
+            <h3 class="titulo">Estado de Inactividad del Servidor</h3>
             <div class="dashboard-content">
-                <h3 class="titulo">Estado de Inactividad del Servidor</h3>
                 <canvas id="inactividadChart"></canvas>
             </div>
-            <div class="dashboard-description">
-                <p>Gráfico que muestra la inactividad de los servidores, permitiendo analizar su rendimiento y tiempo de inactividad.</p>
-                <p>Monitorear la inactividad de los servidores es crucial para identificar posibles fallos o tiempos de inactividad que podrían afectar la experiencia del usuario o el rendimiento del sistema.</p>
-            </div>
         </div>
 
+        <!-- Dashboard 4 -->
         <div id="dashboard4" class="dashboard">
+            <h3 class="titulo">Integraciones con Otras APIs</h3>
             <div class="dashboard-content">
-                <h3 class="titulo">Integraciones con Otras APIs</h3>
                 <canvas id="integracionesChart"></canvas>
-            </div>
-            <div class="dashboard-description">
-                <p>Gráfico de dispersión que representa la eficiencia de las integraciones con APIs externas y cómo afectan al rendimiento general del sistema.</p>
-                <p>Evaluar la eficiencia de las integraciones con APIs externas es esencial para garantizar que las interacciones con servicios externos no afecten negativamente el rendimiento del sistema. Un análisis detallado de estas integraciones permite identificar áreas donde se puedan optimizar los tiempos de respuesta</p>
             </div>
         </div>
     </section>
@@ -200,37 +153,6 @@
 </footer>
 
 <script>
-    // Inicialización de variables
-    let currentDashboard = 0;
-    const dashboards = document.querySelectorAll('.dashboard');
-    const descriptions = [
-        "Este gráfico muestra el tiempo de respuesta de carga de las páginas web a lo largo de los meses. Ayuda a identificar posibles cuellos de botella en el rendimiento del servidor.",
-        "Gráfico de interacciones con los elementos de la página, como clics, que permite identificar qué áreas del sitio son más populares.",
-        "Gráfico que muestra la inactividad de los servidores, permitiendo analizar su rendimiento y tiempo de inactividad.",
-        "Gráfico de dispersión que representa la eficiencia de las integraciones con APIs externas y cómo afectan al rendimiento general del sistema."
-    ];
-
-    // Función para mostrar el dashboard actual
-    function showDashboard(index) {
-        dashboards.forEach((dashboard, i) => {
-            dashboard.classList.toggle('active', i === index);
-        });
-
-        // Actualizar la descripción del dashboard
-        document.querySelectorAll('.dashboard-description p')[index].textContent = descriptions[index];
-    }
-
-    // Manejo de los botones de navegación
-    document.getElementById('prevBtn').addEventListener('click', () => {
-        currentDashboard = (currentDashboard > 0) ? currentDashboard - 1 : dashboards.length - 1;
-        showDashboard(currentDashboard);
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', () => {
-        currentDashboard = (currentDashboard < dashboards.length - 1) ? currentDashboard + 1 : 0;
-        showDashboard(currentDashboard);
-    });
-
     // Configuración de los gráficos
     const ctx1 = document.getElementById('cargaChart').getContext('2d');
     const cargaChart = new Chart(ctx1, {
@@ -262,7 +184,7 @@
             datasets: [{
                 label: 'Interacciones',
                 data: [200, 450, 300],
-                backgroundColor: 'rgba(153, 102, 255, 0.5)',
+                backgroundColor: 'rgba(130, 400, 105, 0.5)',
             }]
         },
         options: {
