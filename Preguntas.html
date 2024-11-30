@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>City Tours - Preguntas Frecuentes</title>
+  <style>
+    /* Estilos básicos */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    /* Encabezado */
+    header {
+      background-color: #243442;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      color: #ff7f00;
+    }
+
+    /* Contenedor de preguntas frecuentes */
+    .faq-section {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-section h2 {
+      color: #ff7f00;
+    }
+
+    .faq-section p {
+      color: #555;
+    }
+
+    /* Lista de preguntas frecuentes */
+    .faq-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .faq-item {
+      margin: 15px 0;
+      cursor: pointer;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+
+    .faq-item h3 {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+      transition: color 0.3s;
+    }
+
+    .faq-item:hover h3 {
+      color: #ff7f00;
+    }
+
+    .faq-item ul {
+      margin-left: 20px;
+      list-style: disc;
+      display: none;
+      color: #555;
+    }
+
+    .faq-item ul.show {
+      display: block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      min-width: 160px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+
+    .dropdown-content li {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .dropdown-content li a {
+      color: #243442;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content li a:hover {
+      background-color: #ff7f00;
+      color: #fff;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    /* Estilos generales del contenedor de los botones */
+    /* Asegura que el contenedor ocupe el 100% del ancho */
+    /* Contenedor de los botones alineados a la derecha */
+.language-buttons {
+  position: absolute; /* Posiciona los botones de manera absoluta */
+  top: 20px; /* Ajusta la distancia desde la parte superior de la página */
+  right: 20px; /* Alinea los botones al borde derecho */
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones dentro del contenedor */
+  z-index: 1000; /* Asegura que los botones estén por encima de otros elementos */
+}
+
+/* Estilo para cada botón */
+.language-buttons button {
+  background-color: #243442; /* Color de fondo azul */
+  color: white; /* Texto blanco */
+  font-size: 16px; /* Tamaño de fuente */
+  padding: 10px 20px; /* Espaciado dentro del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  margin: 0 10px; /* Espacio entre los botones */
+  cursor: pointer; /* Manito al pasar el mouse */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+/* Estilo cuando el botón se pasa el ratón (hover) */
+.language-buttons button:hover {
+  background-color: #0056b3; /* Color de fondo azul oscuro */
+  transform: translateY(-3px); /* Efecto de elevar el botón */
+}
+
+/* Estilo cuando el botón está siendo presionado (active) */
+.language-buttons button:active {
+  transform: translateY(0); /* Efecto de presionar el botón */
+  background-color: #004085; /* Color aún más oscuro cuando se presiona */
+}
+
+
+</style>
+<script>
+  function toggleAnswer(element) {
+    const answer = element.querySelector("ul");
+    answer.classList.toggle("show");
+  }
+
+  function changeLanguage(language) {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach((element) => {
+      const key = element.getAttribute('data-i18n');
+      element.innerText = translations[language][key] || element.innerText;
+    });
+  }
+
+  const translations = {
+    "es": {
+      "title": "City Tours - Preguntas Frecuentes",
+      "welcome": "Bienvenidos a City Tours",
+      "faq_title": "Preguntas Frecuentes",
+      "faq_desc": "Explora los temas de ayuda más consultados por nuestros clientes.",
+      "q1": "¿Qué incluye el precio del tour?",
+      "q1_answer1": "Transporte: Incluye el traslado en un vehículo cómodo y seguro.",
+      "q1_answer2": "Entradas: Todas las entradas a las atracciones están incluidas.",
+      "q1_answer3": "Guía: Un guía turístico profesional te acompañará durante el recorrido.",
+      "q2": "¿Puedo cancelar o cambiar mi reserva?",
+      "q2_answer1": "Política de Cancelación: Puedes cancelar tu reserva hasta 48 horas antes del tour sin penalización.",
+      "q2_answer2": "Reembolso: Si cancelas dentro del plazo, recibirás un reembolso completo.",
+      "q2_answer3": "Cambios: Los cambios de fecha son posibles, sujeto a disponibilidad.",
+      "q3": "¿El tour es adecuado para todas las edades?",
+      "q3_answer1": "Familias: Nuestros tours son aptos para familias con niños.",
+      "q3_answer2": "Accesibilidad: Ofrecemos opciones adaptadas para personas con movilidad reducida.",
+      "q3_answer3": "Recomendaciones: Se recomienda consultar sobre tours específicos para mayores.",
+      "q4": "¿Qué debo llevar al tour?",
+      "q4_answer1": "Ropa cómoda: Usa ropa y calzado adecuados para caminar.",
+      "q4_answer2": "Documentos: Lleva tu identificación y cualquier ticket que se te haya proporcionado.",
+      "q4_answer3": "Protección solar: No olvides el protector solar y una botella de agua.",
+      "q5": "¿El tour está disponible en varios idiomas?",
+      "q5_answer1": "Idioma: Ofrecemos tours en varios idiomas.",
+      "q5_answer2": "Guías multilingües: Nuestros guías son profesionales y hablan varios idiomas.",
+      "q5_answer3": "Consulta: Si necesitas un idioma específico, consulta al momento de la reserva.",
+      "q6": "¿Cuánto tiempo dura el tour?",
+      "q6_answer1": "Duración: La mayoría de nuestros tours tienen una duración de 4 a 8 horas.",
+      "q6_answer2": "Itinerario: Recibirás un itinerario detallado al momento de la reserva.",
+      "q6_answer3": "Flexibilidad: Algunos tours pueden tener opciones para extender o acortar la duración."
+    },
+    "en": {
+      "title": "City Tours - Frequently Asked Questions",
+      "welcome": "Welcome to City Tours",
+      "faq_title": "Frequently Asked Questions",
+      "faq_desc": "Explore the most frequently asked help topics by our customers.",
+      "q1": "What does the tour price include?",
+      "q1_answer1": "Transport: Includes comfortable and safe transportation.",
+      "q1_answer2": "Tickets: All entrance fees to attractions are included.",
+      "q1_answer3": "Guide: A professional tour guide will accompany you during the tour.",
+      "q2": "Can I cancel or change my reservation?",
+      "q2_answer1": "Cancellation Policy: You can cancel your reservation up to 48 hours before the tour without penalty.",
+      "q2_answer2": "Refund: If you cancel within the timeframe, you will receive a full refund.",
+      "q2_answer3": "Changes: Date changes are possible, subject to availability.",
+      "q3": "Is the tour suitable for all ages?",
+      "q3_answer1": "Families: Our tours are suitable for families with children.",
+      "q3_answer2": "Accessibility: We offer options for people with reduced mobility.",
+      "q3_answer3": "Recommendations: It is recommended to inquire about specific tours for seniors.",
+      "q4": "What should I bring to the tour?",
+      "q4_answer1": "Comfortable clothing: Wear appropriate clothing and footwear for walking.",
+      "q4_answer2": "Documents: Bring your identification and any tickets provided.",
+      "q4_answer3": "Sun protection: Don't forget sunscreen and a water bottle.",
+      "q5": "Is the tour available in multiple languages?",
+      "q5_answer1": "Languages: We offer tours in multiple languages.",
+      "q5_answer2": "Multilingual guides: Our guides are professional and speak various languages.",
+      "q5_answer3": "Inquiry: If you need a specific language, please inquire at the time of booking.",
+      "q6": "How long does the tour last?",
+      "q6_answer1": "Duration: Most of our tours last between 4 to 8 hours.",
+      "q6_answer2": "Itinerary: You will receive a detailed itinerary when you make your reservation.",
+      "q6_answer3": "Flexibility: Some tours offer options to extend or shorten the duration."
+    }
+  };
+</script>
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1 class="welcome-title" data-i18n="welcome">Bienvenidos a City Tours</h1>
+    <nav>
+        <ul>
+            <li><a href="Index.html" data-i18n="landing_page">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#index" data-i18n="help">Lector de pantalla</a>
+                <ul class="dropdown-content">
+                    <li><a href="#inicio" data-i18n="start">Activar</a></li>
+                    <li><a href="#inicio" data-i18n="stop">Desactivar</a></li>
+                </ul>
+            </li>
+            <li><a href="Preguntas.html" data-i18n="faq_title">Ayuda</a></li>
+            <li><a href="Reservas.html" data-i18n="reservations">Reservas</a></li>
+            <li class="dropdown">
+                <a href="#Dashboard" data-i18n="dashboards">Dashboards</a>
+                <ul class="dropdown-content">
+                    <li><a href="DashNegocio.html" data-i18n="business_dashboard">Dashboard del Negocio</a></li>
+                    <li><a href="DashSistema.html" data-i18n="system_dashboard">Dashboard del Sistema</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#Landin page" data-i18n="landing_page">Landin page</a>
+                <ul class="dropdown-content">
+                    <li><a href="Landinpage.html" data-i18n="paracas">Paracas</a></li>
+                    <li><a href="landinpage2.html" data-i18n="cusco">Cusco</a></li>
+                </ul>
+            </li>
+            <div class="language-buttons">
+              <button onclick="changeLanguage('es')">Español</button>
+              <button onclick="changeLanguage('en')">English</button>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sección de Preguntas Frecuentes -->
+<div class="faq-section">
+  <h2 data-i18n="faq_title">Preguntas Frecuentes</h2>
+  <p data-i18n="faq_desc">Explora los temas de ayuda más consultados por nuestros clientes.</p>
+  <ul class="faq-list">
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q1">¿Qué incluye el precio del tour?</h3>
+        <ul class="answer">
+          <li data-i18n="q1_answer1">Transporte: Incluye el traslado en un vehículo cómodo y seguro.</li>
+          <li data-i18n="q1_answer2">Entradas: Todas las entradas a las atracciones están incluidas.</li>
+          <li data-i18n="q1_answer3">Guía: Un guía turístico profesional te acompañará durante el recorrido.</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q2">¿Puedo cancelar o cambiar mi reserva?</h3>
+        <ul class="answer">
+          <li data-i18n="q2_answer1">Política de Cancelación: Puedes cancelar tu reserva hasta 48 horas antes del tour sin penalización.</li>
+          <li data-i18n="q2_answer2">Reembolso: Si cancelas dentro del plazo, recibirás un reembolso completo.</li>
+          <li data-i18n="q2_answer3">Cambios: Los cambios de fecha son posibles, sujeto a disponibilidad.</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q3">¿El tour es adecuado para todas las edades?</h3>
+        <ul class="answer">
+          <li data-i18n="q3_answer1">Familias: Nuestros tours son aptos para familias con niños.</li>
+          <li data-i18n="q3_answer2">Accesibilidad: Ofrecemos opciones adaptadas para personas con movilidad reducida.</li>
+          <li data-i18n="q3_answer3">Recomendaciones: Se recomienda consultar sobre tours específicos para mayores.</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q4">¿Qué debo llevar al tour?</h3>
+        <ul class="answer">
+          <li data-i18n="q4_answer1">Ropa cómoda: Usa ropa y calzado adecuados para caminar.</li>
+          <li data-i18n="q4_answer2">Documentos: Lleva tu identificación y cualquier ticket que se te haya proporcionado.</li>
+          <li data-i18n="q4_answer3">Protección solar: No olvides el protector solar y una botella de agua.</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q5">¿El tour está disponible en varios idiomas?</h3>
+        <ul class="answer">
+          <li data-i18n="q5_answer1">Idioma: Ofrecemos tours en varios idiomas.</li>
+          <li data-i18n="q5_answer2">Guías multilingües: Nuestros guías son profesionales y hablan varios idiomas.</li>
+          <li data-i18n="q5_answer3">Consulta: Si necesitas un idioma específico, consulta al momento de la reserva.</li>
+        </ul>
+      </div>
+    </li>
+    <li>
+      <div class="question" onclick="toggleAnswer(this)">
+        <h3 data-i18n="q6">¿Cuánto tiempo dura el tour?</h3>
+        <ul class="answer">
+          <li data-i18n="q6_answer1">Duración: La mayoría de nuestros tours tienen una duración de 4 a 8 horas.</li>
+          <li data-i18n="q6_answer2">Itinerario: Recibirás un itinerario detallado al momento de la reserva.</li>
+          <li data-i18n="q6_answer3">Flexibilidad: Algunos tours pueden tener opciones para extender o acortar la duración.</li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+</body>
+</html> 
